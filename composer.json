@@ -1,8 +1,8 @@
 {
-    "name":"bright-cloud-studio/lamvin-rep-finder",
-    "description":"A customized rep finder for Bright Cloud Studio's client: Lamvin",
+    "name":"bright-cloud-studio/add-user-fields",
+    "description":"Extends Contao Users to add custom fields",
     "homepage": "http://www.brightcloudstudo.com",
-    "keywords":["contao", "bright cloud studio", "rep", "finder"],
+    "keywords":["contao", "bright cloud studio", "add", "user", "fields"],
     "type":"contao-module",
     "license":"LGPL-3.0-or-later",
     "authors":[
@@ -16,17 +16,10 @@
         "contao/core-bundle": "~3.2 || ~4.1",
 		"contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
     },
-    "autoload":{
-        "psr-0": {
-            "Bcs\\": [
-                "system/modules/lamvin_rep_finder/library"
-            ]
-        }
-    },
     "extra": {
         "contao": {
             "sources": {
-                "system/modules/lamvin_rep_finder": "system/modules/lamvin_rep_finder"
+                "system/modules/add-user-fields": "system/modules/add-user-fields"
             }
         }
 	}
