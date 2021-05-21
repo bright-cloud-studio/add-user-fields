@@ -1,25 +1,27 @@
 {
     "name":"bright-cloud-studio/add-user-fields",
-    "description":"Adds custom user fields for our clients",
-    "homepage": "http://www.brightcloudstudo.com",
-    "keywords":["contao", "bright cloud studio", "user", "fields"],
+    "description":"Adds custom user fields",
+    "homepage": "http://brightcloudstudio.com/",
+    "keywords":["contao", "add", "user", "fields"],
     "type":"contao-module",
     "license":"LGPL-3.0-or-later",
     "authors":[
         {
             "name":"Bright Cloud Studio",
-            "homepage":"http://www.brightcloudstudio.com"
+            "homepage":"https://brightcloudstudio.com"
         }
     ],
     "require":{
-        "php": "~5.4 || ~7.0",
-        "contao/core-bundle": "~3.2 || ~4.1",
-		"contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
+        "php": "^7.4",
+        "contao/core-bundle": "^4.9"
     },
-    "autoload":{
-        "psr-0": {
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
             "Bcs\\": [
-                "system/modules/add_user_fields/library"
+                "system/modules/add_user_fields/library/Bcs"
             ]
         }
     },
@@ -29,5 +31,6 @@
                 "system/modules/add_user_fields": "system/modules/add_user_fields"
             }
         }
-	}
+    },
+    "minimum-stability": "dev"
 }
