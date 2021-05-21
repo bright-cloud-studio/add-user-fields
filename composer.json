@@ -1,8 +1,8 @@
 {
     "name":"bright-cloud-studio/add-user-fields",
-    "description":"Extends Contao Users to add custom fields",
+    "description":"Adds custom user fields for our clients",
     "homepage": "http://www.brightcloudstudo.com",
-    "keywords":["contao", "bright cloud studio", "add", "user", "fields"],
+    "keywords":["contao", "bright cloud studio", "user", "fields"],
     "type":"contao-module",
     "license":"LGPL-3.0-or-later",
     "authors":[
@@ -16,10 +16,17 @@
         "contao/core-bundle": "~3.2 || ~4.1",
 		"contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
     },
+    "autoload":{
+        "psr-0": {
+            "Bcs\\": [
+                "system/modules/add_user_fields/library"
+            ]
+        }
+    },
     "extra": {
         "contao": {
             "sources": {
-                "system/modules/add-user-fields": "system/modules/add-user-fields"
+                "system/modules/add_user_fields": "system/modules/add_user_fields"
             }
         }
 	}
