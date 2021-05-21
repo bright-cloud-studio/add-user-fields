@@ -20,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['image'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_user']['image'],
 	'inputType'               => 'fileTree',
-	'default'				  => '',
+	'default'		  => '',
 	'search'                  => true,
 	'eval' => [
 		'tl_class' => 'clr',
@@ -34,7 +34,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['image'] = array
 
 $GLOBALS['TL_DCA']['tl_user']['fields']['bio'] = array
 (
-	'label'					=> &$GLOBALS['TL_LANG']['tl_user']['bio'],
-	'inputType'				=> 'textarea',
+	'label'			=> &$GLOBALS['TL_LANG']['tl_user']['bio'],
+	'inputType'		=> 'textarea',
 	'eval'                	=> array('mandatory'=>true, 'rte'=>'tinyMCE','tl_class'=>'long')
 );
