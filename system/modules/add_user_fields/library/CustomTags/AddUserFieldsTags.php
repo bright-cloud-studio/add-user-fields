@@ -23,7 +23,8 @@ class AddUserFieldsTags extends \System
 				$objMember = \UserModel::findById($arrTag[1]);
 				if($objMember) {
 					$strAvatar = $objMember->avatar;
-					return $strAvatar;
+					//return $strAvatar;
+					return "GOT SOMETHING";
 				}
 				
 				return "AVATAR - NO RESULT";
