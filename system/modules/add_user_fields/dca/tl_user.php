@@ -12,13 +12,13 @@
 
  /* Extend the tl_user palettes */
 foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $k => $v) {
-    $GLOBALS['TL_DCA']['tl_user']['palettes'][$k] = str_replace('email;', 'email;{add_user_fields_legend},image,bio;', $v);
+    $GLOBALS['TL_DCA']['tl_user']['palettes'][$k] = str_replace('email;', 'email;{add_user_fields_legend},custom_image,bio;', $v);
 }
 
 /* Add fields to tl_user */
-$GLOBALS['TL_DCA']['tl_user']['fields']['image'] = array
+$GLOBALS['TL_DCA']['tl_user']['fields']['custom_image'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_user']['image'],
+	'label'                   => &$GLOBALS['TL_LANG']['tl_user']['custom_image'],
 	'inputType'               => 'fileTree',
 	'default'		  => '',
 	'search'                  => true,
