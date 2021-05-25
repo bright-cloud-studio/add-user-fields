@@ -3,7 +3,7 @@
 namespace CustomTags;
 use Contao\DataContainer;
 
-class AddUserFieldsTags
+class AddUserFieldsTags extends \System
 {
 	public function onReplaceTag (string $insertTag)
 	{
@@ -20,16 +20,12 @@ class AddUserFieldsTags
 			// if the tag is what we want, {{simple_inventory::id}}, then lets go
 			case 'avatar':
 
-				$ourQuery = "SELECT * FROM tl_user WHERE name LIKE 'Mark St. Jean'";
-				
-				$objAlias = $this->Database->prepare("SELECT * FROM tl_user WHERE name LIKE 'Mark St. Jean'")->execute();
-
-				// Check whether the page alias exists
-				if ($objAlias->numRows > 1)
-				{
-					return "AVATAR - RESULTS!";
+				$objMember = \UserModel::findById($arrTag[1]);
+				if($objMember) {
+					$strAvatar = $objMember->avatar;
+					return $strAvatar;
 				}
-
+				
 				return "AVATAR - NO RESULT";
 			break;
 			case 'bio':
