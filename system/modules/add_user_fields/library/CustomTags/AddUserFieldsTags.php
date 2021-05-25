@@ -17,7 +17,19 @@
 			switch($arrTag[0]) {
 				// if the tag is what we want, {{simple_inventory::id}}, then lets go
 				case 'avatar':
-					return "SHOW AVATAR";
+					
+					$this->import('Database');
+					$fixName = everything_in_tags($this->author, "span");
+					$ourQuery = "SELECT * FROM tl_user WHERE name LIKE 'Mark St. Jean'";
+					$result = $this->Database->prepare($ourQuery)->execute();
+					while($result->next())
+					{
+						$objFile = \FilesModel::findByUuid($result->image);
+						$strPath = $objFile->path;
+						?> <p><?php echo $result->bio; ?></p><img style="width: 100px;" src="<?= $strPath; ?>"><?php
+					}
+					
+					return $strPath;
 				break;
 				case 'bio':
 					return "SHOW BIO";
