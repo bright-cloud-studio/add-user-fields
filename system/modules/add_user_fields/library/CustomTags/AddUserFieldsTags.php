@@ -28,7 +28,7 @@ class AddUserFieldsTags extends \System
 					if ($strPath == '') {
 						return "GOT SOMETHING BUT NO IMAGE";
 					}
-					return $strPath;
+					return "strPath: " . $strPath . ", objFile: " . $objFile;
 				}
 				return "IMAGE - NO RESULT";
 			break;
