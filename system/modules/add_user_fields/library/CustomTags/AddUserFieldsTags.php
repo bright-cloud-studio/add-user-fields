@@ -23,7 +23,12 @@ class AddUserFieldsTags extends \System
 				$objMember = \UserModel::findById($arrTag[1]);
 				if($objMember) {
 					$strImage = $objMember->user_image;
-					return $strImage;
+					if($strImage == '') {
+						return "GOT USER BUT NOT IMAGE";
+					}
+					$objFile = \FilesModel::findByUuid($strImage);
+					$strPath = $objFile->path;
+					return "<img class='user_image' src='" . $strPath . "'>";
 				}
 				return "user_image - NO RESULT";
 			break;
