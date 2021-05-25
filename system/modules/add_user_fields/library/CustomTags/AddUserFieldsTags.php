@@ -18,25 +18,25 @@ class AddUserFieldsTags extends \System
 		// lets make decisions based on the beginning of the tag
 		switch($arrTag[0]) {
 			// if the tag is what we want, {{simple_inventory::id}}, then lets go
-			case 'image':
+			case 'user_image':
 
 				$objMember = \UserModel::findById($arrTag[1]);
 				if($objMember) {
-					$strImage = $objMember->image;
+					$strImage = $objMember->user_image;
 					return $strImage;
 				}
-				return "IMAGE - NO RESULT";
+				return "user_image - NO RESULT";
 			break;
-			case 'bio':
+			case 'user_bio':
 				$objMember = \UserModel::findById($arrTag[1]);
 				if($objMember) {
-					$strBio = $objMember->bio;
+					$strBio = $objMember->user_bio;
 					if ($strBio == '') {
 						return "GOT USER BUT NOT BIO";
 					}
 					return $strBio;
 				}
-				return "BIO - NO RESULT";
+				return "user_bio - NO RESULT";
 			break;
 		}
 
