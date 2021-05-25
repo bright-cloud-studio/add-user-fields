@@ -1,8 +1,5 @@
 <?php
-
 	namespace CustomTags;
-
-	use Bcs\Model\AddUserFields;
 
 	class AddUserFieldsTags
 	{
