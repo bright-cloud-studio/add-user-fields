@@ -18,7 +18,6 @@
 				// if the tag is what we want, {{simple_inventory::id}}, then lets go
 				case 'avatar':
 					
-					$this->import('Database');
 					$fixName = everything_in_tags($this->author, "span");
 					$ourQuery = "SELECT * FROM tl_user WHERE name LIKE 'Mark St. Jean'";
 					$result = $this->Database->prepare($ourQuery)->execute();
