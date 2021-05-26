@@ -47,6 +47,6 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_bio'] = array
 (
 	'label'			=> &$GLOBALS['TL_LANG']['tl_user']['user_bio'],
 	'inputType'		=> 'textarea',
-	'eval'                	=> array('mandatory'=>true, 'rte'=>'tinyMCE','tl_class'=>'long'),
+	'eval'                	=> array('mandatory'=>true, 'rte'=>'tinyMCE','tl_class'=>'clr long'),
 	'sql'                   => "mediumtext NOT NULL default ''"
 );
