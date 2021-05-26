@@ -23,7 +23,6 @@ class AddUserFieldsTags extends \System
 				
 				$imgSize = deserialize($objMember->user_image_size);
 				$imgMeta = deserialize($objMember->user_image_meta);
-				var_dump($imgMeta);
 				
 				if($objMember) {
 					$strImage = $objMember->user_image;
@@ -32,7 +31,7 @@ class AddUserFieldsTags extends \System
 					}
 					$objFile = \FilesModel::findByUuid($strImage);
 					$strPath = $objFile->path;
-					return "<img alt='".$imgMeta->alt."' title='".$imgMeta[1]."' caption='".$imgMeta[2]."' link='".$imgMeta[3]."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
+					return "<img alt='".$imgMeta->alt."' title='".$imgMeta->title."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
 				}
 				return "user_image - NO RESULT";
 			break;
