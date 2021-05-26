@@ -23,7 +23,7 @@ class AddUserFieldsTags extends \System
 				$objMember = \UserModel::findById($arrTag[1]);
 				
 				$imgSize = deserialize($objMember->user_image_size);
-				$arrMeta = getMetaData($objMember->user_image_meta, $GLOBALS['TL_LANGUAGE']);
+				$arrMeta = \Frontend::getMetaData($objMember->user_image_meta, $GLOBALS['TL_LANGUAGE']);
 				// \Frontend::getMetaData 
 				
 				
