@@ -2,8 +2,7 @@
 Adds two custom user fields, "User Image" and "User Bio", which can be added to templates using custom tags.
 
 
-
-- On the User's settings page will be a new section where you can attach an image and a bio
+- On the "Edit User" page is a new section containing our two custom fields.
 
 ![Example Image 1](https://raw.githubusercontent.com/bright-cloud-studio/add-user-fields/main/images/ss_1.png)
 
