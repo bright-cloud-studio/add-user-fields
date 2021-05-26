@@ -39,7 +39,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_size'] = array
 	'inputType'             => 'imageSize',
 	'options'               => \Contao\System::getImageSizes(),
 	'reference'             => &$GLOBALS['TL_LANG']['MSC'],
-	'eval'                  => ['size', 'rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50 clr'],
+	'eval'                  => ['size', 'rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50'],
 	'sql'                   => ['type' => 'string', 'length' => 64, 'default' => '']
 );
 
