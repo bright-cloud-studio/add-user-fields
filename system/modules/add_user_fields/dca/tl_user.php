@@ -58,7 +58,13 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_meta'] = array
 	'eval'                  => [
 		'allowHtml'=>true,
 		'nospace'=>true,
-		'metaFields'=>array('alt', 'title', 'link', 'caption'),
+		'metaFields'    => array
+		(
+			'title'           => 'maxlength="255"',
+			'alt'             => 'maxlength="255"',
+			'link'            => array('attributes'=>'maxlength="255"', 'dcaPicker'=>true),
+			'caption'         => array('type'=>'textarea')
+		),
 		'helpwizard'=>true,
 		'tl_class'=>'long',
 		'dcaPicker'=>true
