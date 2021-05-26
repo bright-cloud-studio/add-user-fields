@@ -57,7 +57,6 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_meta'] = array
 	'reference'             => &$GLOBALS['TL_LANG']['MSC'],
 	'eval'                  => [
 		'allowHtml'=>true,
-		'metaFields'=>array('alt', 'title', 'link', 'caption'),
 		'nospace'=>true,
 		'helpwizard'=>true,
 		'tl_class'=>'long'
