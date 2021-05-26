@@ -32,7 +32,7 @@ class AddUserFieldsTags extends \System
 					$objFile = \FilesModel::findByUuid($strImage);
 					$strPath = $objFile->path;
 					
-					return "<img alt='".$imgMeta['alt']."' title='".$imgMeta->title."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
+					return "<img alt='".$imgMeta[0]."' title='".$imgMeta->title."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
 				}
 				return "user_image - NO RESULT";
 			break;
