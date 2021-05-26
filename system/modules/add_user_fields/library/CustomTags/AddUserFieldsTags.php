@@ -2,6 +2,7 @@
 
 namespace CustomTags;
 use Contao\DataContainer;
+use Contao\ContentElement;
 
 class AddUserFieldsTags extends \System
 {
