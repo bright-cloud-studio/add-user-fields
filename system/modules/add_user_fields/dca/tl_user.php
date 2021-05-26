@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image'] = array
 	'default'		  => '',
 	'search'                  => true,
 	'eval' => [
-		'tl_class' => 'w50',
+		'tl_class' => 'long',
 		'mandatory' => true, 
 		'fieldType' => 'radio', 
 		'filesOnly' => true, 
@@ -39,14 +39,40 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_size'] = array
 	'inputType'             => 'imageSize',
 	'options'               => \Contao\System::getImageSizes(),
 	'reference'             => &$GLOBALS['TL_LANG']['MSC'],
-	'eval'                  => ['size', 'rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50'],
+	'eval'                  => [
+		'rgxp'=>'natural',
+		'includeBlankOption'=>true,
+		'nospace'=>true,
+		'helpwizard'=>true,
+		'tl_class'=>'long'
+	],
 	'sql'                   => ['type' => 'string', 'length' => 64, 'default' => '']
+);
+
+$GLOBALS['TL_DCA']['tl_user']['fields']['user_image_meta'] = array
+(
+	'label'                 => &$GLOBALS['TL_LANG']['tl_user']['user_image_size'],
+	'inputType'             => 'metaWizard',
+	'options'               => \Contao\System::getImageSizes(),
+	'reference'             => &$GLOBALS['TL_LANG']['MSC'],
+	'eval'                  => [
+		'allowHtml'=>true,
+		'metaFields'=>array('alt', 'title', 'link', 'caption'),
+		'nospace'=>true,
+		'helpwizard'=>true,
+		'tl_class'=>'long'
+	],
+	'sql'                   => "blob NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_user']['fields']['user_bio'] = array
 (
 	'label'			=> &$GLOBALS['TL_LANG']['tl_user']['user_bio'],
 	'inputType'		=> 'textarea',
-	'eval'                	=> array('mandatory'=>true, 'rte'=>'tinyMCE','tl_class'=>'clr long'),
+	'eval'                	=> [
+		'mandatory'=>true,
+		'rte'=>'tinyMCE',
+		'tl_class'=>'long'
+	],
 	'sql'                   => "mediumtext NOT NULL default ''"
 );
