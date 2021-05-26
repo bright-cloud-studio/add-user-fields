@@ -13,6 +13,7 @@
 
 /* Fields */
 $GLOBALS['TL_LANG']['tl_user']['user_image']          = array('Image', 'Custom "Image" User field.');
+$GLOBALS['TL_LANG']['tl_user']['user_image_size']     = array('Image Size', 'Pick a size for the user\'s image.');
 $GLOBALS['TL_LANG']['tl_user']['user_bio']            = array('Bio', 'Custom "Bio" User field.');
 
 /* Legends */
