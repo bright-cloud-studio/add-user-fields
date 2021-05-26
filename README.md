@@ -1,5 +1,5 @@
 # Bright Cloud Studio's Add User Fields
-Adds two custom user fields, "User Image" and "User Bio", which can be added to templates using custom tags. Add to news templates to display an author's image and bio with each post or put in a static id to display them anywhere you'd like.
+Adds two custom user fields, "User Image" and "User Bio", which can be added to templates using custom tags. Add to news templates to display an author's image and bio with each post or put in a static id to display anywhere you'd like.
 
 
 - On the "Edit User" page is a new section containing our two custom fields.
