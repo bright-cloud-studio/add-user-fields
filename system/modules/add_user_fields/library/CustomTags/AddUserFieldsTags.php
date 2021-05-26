@@ -22,7 +22,7 @@ class AddUserFieldsTags extends \System
 				$objMember = \UserModel::findById($arrTag[1]);
 				
 				$imgSize = deserialize($objMember->user_image_size);
-				$meta2 = Frontend::getMetaData($objMember->user_image_meta, $GLOBALS['TL_LANGUAGE']);
+				$arrMeta = $this->getMetaData($objMember->user_image_meta, $GLOBALS['TL_LANGUAGE']);
 				
 				
 				if($objMember) {
@@ -33,7 +33,7 @@ class AddUserFieldsTags extends \System
 					$objFile = \FilesModel::findByUuid($strImage);
 					$strPath = $objFile->path;
 					
-					return "<img alt='".$meta2['alt']."' title='".$meta2->title."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
+					return "<img alt='".$arrMeta['alt']."' title='".$arrMeta->title."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
 				}
 				return "user_image - NO RESULT";
 			break;
