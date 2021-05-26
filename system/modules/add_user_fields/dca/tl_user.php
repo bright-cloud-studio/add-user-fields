@@ -16,15 +16,6 @@ foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $k => $v) {
 }
 
 /* Add fields to tl_user */
-
-$GLOBALS['TL_DCA']['tl_user']['fields']['user_bio'] = array
-(
-	'label'			=> &$GLOBALS['TL_LANG']['tl_user']['user_bio'],
-	'inputType'		=> 'textarea',
-	'eval'                	=> array('mandatory'=>true, 'rte'=>'tinyMCE','tl_class'=>'long'),
-	'sql'                   => "mediumtext NOT NULL default ''"
-);
-
 $GLOBALS['TL_DCA']['tl_user']['fields']['user_image'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_user']['user_image'],
@@ -32,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image'] = array
 	'default'		  => '',
 	'search'                  => true,
 	'eval' => [
-		'tl_class' => 'clr',
+		'tl_class' => 'w50',
 		'mandatory' => true, 
 		'fieldType' => 'radio', 
 		'filesOnly' => true, 
@@ -48,6 +39,14 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_size'] = array
 	'inputType'             => 'imageSize',
 	'options'               => \Contao\System::getImageSizes(),
 	'reference'             => &$GLOBALS['TL_LANG']['MSC'],
-	'eval'                  => ['size', 'rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50'],
+	'eval'                  => ['size', 'rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50 clr'],
 	'sql'                   => ['type' => 'string', 'length' => 64, 'default' => '']
+);
+
+$GLOBALS['TL_DCA']['tl_user']['fields']['user_bio'] = array
+(
+	'label'			=> &$GLOBALS['TL_LANG']['tl_user']['user_bio'],
+	'inputType'		=> 'textarea',
+	'eval'                	=> array('mandatory'=>true, 'rte'=>'tinyMCE','tl_class'=>'long'),
+	'sql'                   => "mediumtext NOT NULL default ''"
 );
