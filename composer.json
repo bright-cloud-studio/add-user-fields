@@ -1,6 +1,6 @@
 {
     "name":"bright-cloud-studio/add-user-fields",
-    "description":"Adds custom user fields",
+    "description":"Adds two custom user fields, image and bio, so they can be displayed on News posts and elsewhere",
     "homepage": "http://brightcloudstudio.com/",
     "keywords":["contao", "add", "user", "fields"],
     "type":"contao-module",
