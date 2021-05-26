@@ -10,7 +10,7 @@
 
 - On any template, for this example I'm using "news_full.html5", add the custom tags "{{user_image::id}}" and "{{user_bio::id}}" to display them, making sure to replace id with the User's id.
 
-###### For this example we wanted to add an author's image and bio to news posts so $author_id is obtained using \NewsModel::findByAlias but you can use them anywhere as long as you add a valid user id
+> For this example we wanted to add an author's image and bio to news posts so $author_id is obtained using \NewsModel::findByAlias but you can use them anywhere as long as you add a valid user id
 
 ![Example Image 2](https://raw.githubusercontent.com/bright-cloud-studio/add-user-fields/main/images/ss_2.png)
 
