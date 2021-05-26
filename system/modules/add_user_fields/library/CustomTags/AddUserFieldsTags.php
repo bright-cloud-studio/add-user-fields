@@ -28,7 +28,7 @@ class AddUserFieldsTags extends \System
 					}
 					$objFile = \FilesModel::findByUuid($strImage);
 					$strPath = $objFile->path;
-					return "<img class='user_image' src='" . $strPath . "'>";
+					return "<img class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
 				}
 				return "user_image - NO RESULT";
 			break;
@@ -39,7 +39,7 @@ class AddUserFieldsTags extends \System
 					if ($strBio == '') {
 						return "GOT USER BUT NOT BIO";
 					}
-					return $strBio;
+					return "<div id='user_bio' class='user_bio id_" . $arrTag[1] . "'>" . $strBio . "</div>";
 				}
 				return "user_bio - NO RESULT";
 			break;
