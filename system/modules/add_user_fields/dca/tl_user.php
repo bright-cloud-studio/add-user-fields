@@ -51,7 +51,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_size'] = array
 
 $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_meta'] = array
 (
-	'label'                 => &$GLOBALS['TL_LANG']['tl_user']['user_image_size'],
+	'label'                 => &$GLOBALS['TL_LANG']['tl_user']['user_image_meta'],
 	'inputType'             => 'metaWizard',
 	'options'               => \Contao\System::getImageSizes(),
 	'reference'             => &$GLOBALS['TL_LANG']['MSC'],
