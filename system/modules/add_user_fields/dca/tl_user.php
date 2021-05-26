@@ -58,8 +58,10 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image_meta'] = array
 	'eval'                  => [
 		'allowHtml'=>true,
 		'nospace'=>true,
+		'metaFields'=>array('alt', 'title', 'link', 'caption'),
 		'helpwizard'=>true,
-		'tl_class'=>'long'
+		'tl_class'=>'long',
+		'dcaPicker'=>true
 	],
 	'sql'                   => "blob NULL"
 );
