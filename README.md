@@ -1,5 +1,5 @@
 # Bright Cloud Studio's Add User Fields
-Adds two custom user fields, "User Image" and "User Bio", which can be added to templates using custom template tags.
+Adds two custom user fields, "User Image" and "User Bio", which can be added to templates using custom tags.
 
 
 
