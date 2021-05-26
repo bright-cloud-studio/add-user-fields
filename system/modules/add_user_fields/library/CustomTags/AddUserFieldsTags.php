@@ -7,10 +7,6 @@ class AddUserFieldsTags extends \System
 {
 	public function onReplaceTag (string $insertTag)
 	{
-		/** @var PageModel $objPage */
-		global $objPage;
-		
-		
 		// if this tag doesnt contain :: it doesn't have an id, so we can stop right here
 		if (stristr($insertTag, "::") === FALSE) {
 			return 'no_id';
@@ -26,7 +22,8 @@ class AddUserFieldsTags extends \System
 				$objMember = \UserModel::findById($arrTag[1]);
 				
 				$imgSize = deserialize($objMember->user_image_size);
-				$arrMeta = $this->getMetaData($objMember->user_image_meta, $objPage->language);
+				$meta2 = Frontend::getMetaData($objMember->user_image_meta, $GLOBALS['TL_LANGUAGE']);
+				
 				
 				if($objMember) {
 					$strImage = $objMember->user_image;
@@ -36,7 +33,7 @@ class AddUserFieldsTags extends \System
 					$objFile = \FilesModel::findByUuid($strImage);
 					$strPath = $objFile->path;
 					
-					return "<img alt='".$arrMeta['alt']."' title='".$imgMeta->title."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
+					return "<img alt='".$meta2['alt']."' title='".$meta2->title."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
 				}
 				return "user_image - NO RESULT";
 			break;
