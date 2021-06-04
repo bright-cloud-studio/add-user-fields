@@ -24,7 +24,6 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image'] = array
 	'search'                  => true,
 	'eval' => [
 		'tl_class' => 'long',
-		'mandatory' => true, 
 		'fieldType' => 'radio', 
 		'filesOnly' => true, 
 		'mandatory' => true
@@ -77,7 +76,6 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_bio'] = array
 	'label'			=> &$GLOBALS['TL_LANG']['tl_user']['user_bio'],
 	'inputType'		=> 'textarea',
 	'eval'                	=> [
-		'mandatory'=>true,
 		'rte'=>'tinyMCE',
 		'tl_class'=>'long'
 	],
