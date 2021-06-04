@@ -39,7 +39,6 @@ class AddUserFieldsTags extends \System
 					$strImage = $objMember->user_image;
 					if($strImage == '') {
 						// Got the user but no image, just return nothing
-						$this->console_log("bright-cloud-studio/add-user-fields - User has no image assigned to their profile.");
 						return "";
 					}
 					$objFile = \FilesModel::findByUuid($strImage);
@@ -61,7 +60,6 @@ class AddUserFieldsTags extends \System
 					$strBio = $objMember->user_bio;
 					if ($strBio == '') {
 						// Got the user but no bio, just return nothing
-						$this->console_log("bright-cloud-studio/add-user-fields - User has no bio assigned to their profile.");
 						return "";
 					}
 					return "<div id='user_bio' class='user_bio id_" . $arrTag[1] . "'>" . $strBio . "</div>";
@@ -72,15 +70,6 @@ class AddUserFieldsTags extends \System
 		}
 
 		// something has gone horribly wrong, let the user know and hope for brighter lights ahead
-		$this->console.log("bright-cloud-studio/add-user-fields - This package is installed but something went horribly wrong.");
 		return 'something_went_wrong';
-	}
-	
-	protected function console_log($output, $with_script_tags = true) {
-		$js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . ');';
-		if ($with_script_tags) {
-			$js_code = '<script>' . $js_code . '</script>';
-		}
-		echo $js_code;
 	}
 }
