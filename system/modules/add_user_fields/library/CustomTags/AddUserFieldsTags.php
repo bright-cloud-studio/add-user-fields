@@ -20,7 +20,7 @@ class AddUserFieldsTags extends \System
 	{
 		// if this tag doesnt contain :: it doesn't have an id, so we can stop right here
 		if (stristr($insertTag, "::") === FALSE) {
-			return 'no_id';
+			return 'Your tag has no ID. Please add a User ID or remove this tag from the page.';
 		}
 
 		// break our tag into an array
@@ -38,7 +38,8 @@ class AddUserFieldsTags extends \System
 				if($objMember) {
 					$strImage = $objMember->user_image;
 					if($strImage == '') {
-						return "GOT USER BUT NOT IMAGE";
+						// Got the user but no image, just return nothing
+						return "";
 					}
 					$objFile = \FilesModel::findByUuid($strImage);
 					$strPath = $objFile->path;
@@ -55,7 +56,8 @@ class AddUserFieldsTags extends \System
 				if($objMember) {
 					$strBio = $objMember->user_bio;
 					if ($strBio == '') {
-						return "GOT USER BUT NOT BIO";
+						// Got the user but no bio, just return nothing
+						return "";
 					}
 					return "<div id='user_bio' class='user_bio id_" . $arrTag[1] . "'>" . $strBio . "</div>";
 				}
