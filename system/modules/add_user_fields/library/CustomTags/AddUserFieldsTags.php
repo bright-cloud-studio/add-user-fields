@@ -39,17 +39,21 @@ class AddUserFieldsTags extends \System
 					$strImage = $objMember->user_image;
 					if($strImage == '') {
 						// Got the user but no image, just return nothing
+						console.log("bright-cloud-studio/add-user-fields - User has no image assigned to their profile.");
 						return "";
 					}
 					$objFile = \FilesModel::findByUuid($strImage);
 					$strPath = $objFile->path;
 					
+					// This needs to be changed so it checks for each attribute and assembles the link correctly.
+					// for now it just checks if there is a link or not.
 					if($arrMeta['link'] != '')
 						return "<a href='".$arrMeta['link']."'><img alt='".$arrMeta['alt']."' title='".$arrMeta['alt']."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'></a>";
 					else
 						return "<img alt='".$arrMeta['alt']."' title='".$arrMeta['alt']."' width='".$imgSize[0]."' height='".$imgSize[1]."' class='user_image' id='user_image id_" . $arrTag[1] . "' src='" . $strPath . "'>";
 				}
-				return "user_image - NO RESULT";
+				// if we hit this line then there is no user found
+				return "No User found with an ID of " + $arrTag[1];
 			break;
 			case 'user_bio':
 				$objMember = \UserModel::findById($arrTag[1]);
@@ -57,15 +61,18 @@ class AddUserFieldsTags extends \System
 					$strBio = $objMember->user_bio;
 					if ($strBio == '') {
 						// Got the user but no bio, just return nothing
+						console.log("bright-cloud-studio/add-user-fields - User has no bio assigned to their profile.");
 						return "";
 					}
 					return "<div id='user_bio' class='user_bio id_" . $arrTag[1] . "'>" . $strBio . "</div>";
 				}
-				return "user_bio - NO RESULT";
+				// if we hit this line then there is no user found
+				return "No User found with an ID of " + $arrTag[1];
 			break;
 		}
 
 		// something has gone horribly wrong, let the user know and hope for brighter lights ahead
+		console.log("bright-cloud-studio/add-user-fields - This package is installed but something went horribly wrong.");
 		return 'something_went_wrong';
 	}
 }
