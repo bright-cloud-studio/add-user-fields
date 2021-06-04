@@ -25,8 +25,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_image'] = array
 	'eval' => [
 		'tl_class' => 'long',
 		'fieldType' => 'radio', 
-		'filesOnly' => true, 
-		'mandatory' => true
+		'filesOnly' => true
 	],
 	'sql'                    => ['type' => 'binary', 'length' => 16, 'notnull' => false, 'fixed' => true]
 );
