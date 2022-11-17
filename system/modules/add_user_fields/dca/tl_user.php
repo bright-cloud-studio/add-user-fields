@@ -80,3 +80,14 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_bio'] = array
 	],
 	'sql'                   => "mediumtext NOT NULL default ''"
 );
+
+$GLOBALS['TL_DCA']['tl_user']['fields']['user_credentials'] = array
+(
+	'label'			=> &$GLOBALS['TL_LANG']['tl_user']['user_credentials'],
+	'inputType'		=> 'text',
+	'eval'                	=> [
+		'mandatory'=>false,
+		'tl_class'=>'w50'
+	],
+	'sql'                   => "varchar(255) NOT NULL default ''"
+);
