@@ -67,6 +67,19 @@ class AddUserFieldsTags extends \System
 				// if we hit this line then there is no user found
 				return "No User found with an ID of " + $arrTag[1];
 			break;
+			case 'user_credentials':
+				$objMember = \UserModel::findById($arrTag[1]);
+				if($objMember) {
+					$strCredentials = $objMember->user_credentials;
+					if ($strCredentials == '') {
+						// Got the user but no bio, just return nothing
+						return "";
+					}
+					return "<span id='user_credentials' class='user_credentials id_" . $arrTag[1] . "'>" . $strCredentials . "</div>";
+				}
+				// if we hit this line then there is no user found
+				return "No User found with an ID of " + $arrTag[1];
+			break;
 		}
 
 		// something has gone horribly wrong, let the user know and hope for brighter lights ahead
