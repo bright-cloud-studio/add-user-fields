@@ -12,7 +12,7 @@
 
  /* Extend the tl_user palettes */
 foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $k => $v) {
-    $GLOBALS['TL_DCA']['tl_user']['palettes'][$k] = str_replace('email;', 'email;{add_user_fields_legend},user_image,user_image_size,user_image_meta,user_bio;', $v);
+    $GLOBALS['TL_DCA']['tl_user']['palettes'][$k] = str_replace('email;', 'email;{add_user_fields_legend},user_image,user_image_size,user_image_meta,user_bio,user_credentials;', $v);
 }
 
 /* Add fields to tl_user */
