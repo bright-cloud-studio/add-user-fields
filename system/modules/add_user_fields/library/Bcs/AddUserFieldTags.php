@@ -19,15 +19,7 @@ class AddUserFieldTags
             return false;
         }
         
-        return str_rot13($chunks[1]);
-	
-
-	switch($arrTag[0]) {
-		case 'user_image':
-			return "IMAGE GOES HERE";
-		break;
-	}
-	    
+	    return "bingbongnoise";
 	    
     }
 }
