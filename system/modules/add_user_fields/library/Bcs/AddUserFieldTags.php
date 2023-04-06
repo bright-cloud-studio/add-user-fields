@@ -14,7 +14,7 @@ namespace CustomTags;
 use Contao\DataContainer;
 use Contao\ContentElement;
 
-class AddUserFieldsTags extends \System
+class AddUserFieldTags extends \System
 {
 	public function onReplaceTag (string $insertTag)
 	{
