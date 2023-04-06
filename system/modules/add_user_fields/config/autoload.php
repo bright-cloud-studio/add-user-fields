@@ -14,5 +14,5 @@
 /* Register Classes */
 ClassLoader::addClasses(array
 (
-	'CustomTags\AddUserFieldsTags' 		=> 'system/modules/add_user_fields/library/CustomTags/AddUserFieldsTags.php'
+	'Bcs\AddUserFieldTags' 		=> 'system/modules/add_user_fields/library/Bcs/AddUserFieldTags.php'
 ));
