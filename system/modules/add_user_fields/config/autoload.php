@@ -12,7 +12,7 @@
 
 
 /* Register Classes */
-ClassLoader::addClasses(array
-(
-	'Bcs\AddUserFieldTags' 		=> 'system/modules/add_user_fields/library/Bcs/AddUserFieldTags.php'
-));
+//ClassLoader::addClasses(array
+//(
+//	'Bcs\AddUserFieldTags' 		=> 'system/modules/add_user_fields/library/Bcs/AddUserFieldTags.php'
+//));
