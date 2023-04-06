@@ -78,8 +78,8 @@ class AddUserFieldTags extends \System
 				return "No User found with an ID of " + $arrTag[1];
 			break;
 		}
-
-		// something has gone horribly wrong, let the user know and hope for brighter lights ahead
-		return 'something_went_wrong';
+		
+		// return false so the next/other replace tag functions can run
+		return false;
 	}
 }
