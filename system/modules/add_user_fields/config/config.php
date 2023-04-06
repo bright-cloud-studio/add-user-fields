@@ -11,6 +11,8 @@
 **/
 
 /* Hooks */
-if (\Config::getInstance()->isComplete()) {
+
+/*if (\Config::getInstance()->isComplete()) {
   $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('CustomTags\AddUserFieldsTags', 'onReplaceTag');
 }
+*/
