@@ -78,7 +78,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['user_bio'] = array
 		'rte'=>'tinyMCE',
 		'tl_class'=>'long'
 	],
-	'sql'                   => "mediumtext NOT NULL default ''"
+	'sql'                   => "mediumtext NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_user']['fields']['user_credentials'] = array
