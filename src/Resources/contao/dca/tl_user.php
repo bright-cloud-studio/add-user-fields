@@ -10,10 +10,24 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
 **/
 
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
  /* Extend the tl_user palettes */
-foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $k => $v) {
-    $GLOBALS['TL_DCA']['tl_user']['palettes'][$k] = str_replace('email;', 'email;{add_user_fields_legend},user_image,user_image_size,user_image_meta,user_bio,user_credentials;', $v);
-}
+// foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $k => $v) {
+//     $GLOBALS['TL_DCA']['tl_user']['palettes'][$k] = str_replace('email;', 'email;{add_user_fields_legend},user_image,user_image_size,user_image_meta,user_bio,user_credentials;', $v);
+// }
+
+PaletteManipulator::create()
+    ->addLegend('name_legend', 'add_user_fields_legend', PaletteManipulator::POSITION_AFTER)
+    ->addField('user_image', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('user_image_size', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('user_image_meta', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('user_bio', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('user_credentials', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('default', 'palettes')
+;
+
+
 
 /* Add fields to tl_user */
 $GLOBALS['TL_DCA']['tl_user']['fields']['user_image'] = array
