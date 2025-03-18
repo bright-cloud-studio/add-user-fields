@@ -18,14 +18,9 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 // }
 
 PaletteManipulator::create()
-    ->addLegend('name_legend', 'add_user_fields_legend', PaletteManipulator::POSITION_AFTER)
-    ->addField('user_image', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('user_image_size', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('user_image_meta', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('user_bio', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('user_credentials', 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
-    ->applyToPalette('default', 'palettes')
-;
+    ->addLegend('add_user_fields_legend', 'email_legend', PaletteManipulator::POSITION_AFTER)
+    ->addField(['user_image', 'user_image_size', 'user_image_meta', 'user_bio', 'user_credentials'], 'add_user_fields_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('default', 'tl_user');
 
 
 
