@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  BrightCloudStudio\AddUserFieldsBundle\:
+    resource: '../src/*'
+    exclude: '../src/{DependencyInjection,Entity,Migrations,Tests}'
+
+  BrightCloudStudio\AddUserFieldsBundle\EventListener\ReplaceInsertTagsListener:
+    tags:
+      - { name: 'contao.hook.replace_insert_tags' }

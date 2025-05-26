@@ -12,3 +12,15 @@
 > For this example we wanted to add an author's image and bio to news posts so $author_id is obtained using \NewsModel::findByAlias but you can use them anywhere as long as you add a valid user id
 
 - Can be styled using the "user_image" and "user_bio" class and id.
+
+## Requirements
+
+- PHP 8.1 or higher
+- Contao 5.0 or higher
+
+## Installation
+
+1. Extract this bundle into `vendor/bright-cloud-studio/add-user-fields`.
+2. Run `composer dump-autoload`.
+3. Clear Contao cache.
+4. Use insert tags `{{user_image::USER_ID}}` and `{{user_bio::USER_ID}}` to display fields.
